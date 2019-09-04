@@ -1,11 +1,10 @@
 import React from 'react';
-import Components from './components';
-
+import FilterFormView from './components/pages/filterForm';
 
 function App() {
   return (
     <div className="App">
-      <Components.view.FilterFormView />
+      <FilterFormView />
     </div>
   );
 }
