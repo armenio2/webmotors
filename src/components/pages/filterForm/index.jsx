@@ -93,3 +93,5 @@ export default FilterForm;
 
 
 //https://www.webmotors.com.br/assets/img/webmotors.svg?t=7963 // icon
+
+// icon color #C4C4C4
