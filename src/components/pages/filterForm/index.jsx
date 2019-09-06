@@ -1,14 +1,8 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
-import Checkbox from 'rc-checkbox';
+//import Checkbox from 'rc-checkbox';
 import Icons from '../../../assets//icons';
-import Select from 'react-select';
 
-const options = [
-    { value: 'marca', label: 'marca' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-];
 
 function FilterForm() {
     return (
@@ -77,16 +71,11 @@ function FilterForm() {
                         <Container style={stylecontainerForm}>
                             <Row>
                                 <Col sm={2}>
-                                    <label>
-                                        <Checkbox
-                                            //style={styleCheckbox}
-                                            borderColor='#D24A53'
-                                            checked
-                                        //onChange={onChange}
-                                        //disabled={this.state.disabled}
-                                        />
-                                        &nbsp; Novos
-                                         </label>
+                                    <input type="checkbox" id="scales" name="Novos"
+                                        checked
+                                        style={{ borderColor: 'red', color: 'green' }}
+                                    />
+                                    <label for="scales">Novos</label>
                                 </Col>
                                 <Col sm={2}>
                                     <input type="checkbox" id="scales" name="Usados"
@@ -101,14 +90,13 @@ function FilterForm() {
                                     <p>input local + raio</p>
                                 </Col>
                                 <Col sm={3}>
-                                    <Select
-                                        className='styledFoo'
-                                        //style={styleSelect}
-                                        //value={selectedOption}
-                                        //onChange={this.handleChange}
-                                        options={options}
-                                    />
-                                    <p>input marca</p>
+                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white' }} name="cars">
+                                        <option value="volvo">Marca</option>
+                                        <option value="volvo">Volvo</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="fiat">Fiat</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
                                 </Col>
                                 <Col sm={3}>
                                     <p>input modelos</p>
