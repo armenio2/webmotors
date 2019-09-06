@@ -1,7 +1,14 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
-
+import Checkbox from 'rc-checkbox';
 import Icons from '../../../assets//icons';
+import Select from 'react-select';
+
+const options = [
+    { value: 'marca', label: 'marca' },
+    { value: 'strawberry', label: 'Strawberry' },
+    { value: 'vanilla', label: 'Vanilla' },
+];
 
 function FilterForm() {
     return (
@@ -70,10 +77,23 @@ function FilterForm() {
                         <Container style={stylecontainerForm}>
                             <Row>
                                 <Col sm={2}>
-                                    <p>checkbox novos</p>
+                                    <label>
+                                        <Checkbox
+                                            //style={styleCheckbox}
+                                            borderColor='#D24A53'
+                                            checked
+                                        //onChange={onChange}
+                                        //disabled={this.state.disabled}
+                                        />
+                                        &nbsp; Novos
+                                         </label>
                                 </Col>
                                 <Col sm={2}>
-                                    <p>checkbox usados</p>
+                                    <input type="checkbox" id="scales" name="Usados"
+                                        checked
+                                        style={{ borderColor: 'red', color: 'green' }}
+                                    />
+                                    <label for="scales">Usados</label>
                                 </Col>
                             </Row>
                             <Row>
@@ -81,6 +101,13 @@ function FilterForm() {
                                     <p>input local + raio</p>
                                 </Col>
                                 <Col sm={3}>
+                                    <Select
+                                        className='styledFoo'
+                                        //style={styleSelect}
+                                        //value={selectedOption}
+                                        //onChange={this.handleChange}
+                                        options={options}
+                                    />
                                     <p>input marca</p>
                                 </Col>
                                 <Col sm={3}>
@@ -141,9 +168,22 @@ const styleTabActive = {
     color: '#E8A4B1'
 }
 
+const styleCheckbox = {
+    borderColor: '#D24A53'
+}
+
+const styleSelect = {
+    color: 'red',
+    background: 'green',
+    borderColor: 'yellow'
+}
+
 export default FilterForm;
 
 
-            //https://www.webmotors.com.br/assets/img/webmotors.svg?t=7963 // icon
+                    //https://www.webmotors.com.br/assets/img/webmotors.svg?t=7963 // icon
 
-// red strong color #D24A53
+        // red strong color #D24A53
+
+
+//https://www.npmjs.com/package/react-select
