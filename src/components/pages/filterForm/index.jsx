@@ -5,7 +5,7 @@ import Icons from '../../../assets//icons';
 
 function FilterForm() {
     return (
-        <Container  style={stylesContainer}>
+        <Container style={stylesContainer}>
             <Container style={{ lineHeight: '10px' }}>
                 <Row>
                     <Col sm={12}>
@@ -16,21 +16,21 @@ function FilterForm() {
             <Container style={{ lineHeight: '10px' }}>
                 <Row nogutter align="end">
                     <Col sm={3}>
-                        <Container style={styleTab}>
+                        <Container style={styleTabActive}>
                             <Row nogutter align="end">
                                 <Col sm={4}>
                                     <img src={Icons.carSelected} alt="car" style={{ width: '45px' }} />
                                 </Col>
                                 <Col sm={8}>
-                                    <Container>
-                                        <Row nogutter>
+                                    <Container style={{ lineHeight: '1px' }}>
+                                        <Row >
                                             <Col sm={12}>
-                                                <p>comprar</p>
-                                            </Col>
-                                        </Row>
-                                        <Row nogutter>
-                                            <Col sm={12}>
-                                                <p>carros</p>
+                                                <p>COMPRAR</p>
+                                                <Row >
+                                                    <Col sm={12}>
+                                                        <p>CARROS</p>
+                                                    </Col>
+                                                </Row>
                                             </Col>
                                         </Row>
                                     </Container>
@@ -42,18 +42,18 @@ function FilterForm() {
                         <Container style={styleTab}>
                             <Row align="end">
                                 <Col sm={4}>
-                                    <img src={Icons.carSelected} alt="car" style={{ width: '45px' }} />
+                                    <img src={Icons.carDefault} alt="car" style={{ width: '45px' }} />
                                 </Col>
                                 <Col sm={8}>
-                                    <Container>
-                                        <Row>
+                                    <Container style={{ lineHeight: '1px' }}>
+                                        <Row >
                                             <Col sm={12}>
-                                                <p>comprar</p>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col sm={12}>
-                                                <p>motos</p>
+                                                <p>COMPRAR</p>
+                                                <Row >
+                                                    <Col sm={12}>
+                                                        <p>MOTOS</p>
+                                                    </Col>
+                                                </Row>
                                             </Col>
                                         </Row>
                                     </Container>
@@ -62,7 +62,7 @@ function FilterForm() {
                         </Container>
                     </Col>
                     <Col sm={6} align="right">
-                        <p>vender meu carro</p>
+                        <p>VENDER MEU CARRO</p>
                     </Col>
                 </Row>
                 <Row nogutter>
@@ -132,12 +132,18 @@ const stylecontainerForm = {
 }
 
 const styleTab = {
-    borderBottom: '1px solid red'
+    borderBottom: '1px solid #C4C4C4',
+    color: '#C4C4C4'
+}
+
+const styleTabActive = {
+    borderBottom: '1px solid red',
+    color: 'red'
 }
 
 export default FilterForm;
 
 
-//https://www.webmotors.com.br/assets/img/webmotors.svg?t=7963 // icon
+            //https://www.webmotors.com.br/assets/img/webmotors.svg?t=7963 // icon
 
 // icon color #C4C4C4
