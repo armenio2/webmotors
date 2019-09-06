@@ -1,29 +1,71 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 
+import Icons from '../../../assets//icons';
+
 function FilterForm() {
     return (
-        <Container style={stylesContainer}>
-            <Container>
+        <Container  style={stylesContainer}>
+            <Container style={{ lineHeight: '10px' }}>
                 <Row>
                     <Col sm={12}>
                         <img src="https://www.webmotors.com.br/assets/img/webmotors.svg?t=7963" alt="webmotorLogo" />
                     </Col>
                 </Row>
             </Container>
-            <Container>
-                <Row>
-                    <Col sm={2}>
-                        <p>carros tab</p>
-                    </Col>
-                    <Col sm={2}>
-                        <p>motos tab</p>
+            <Container style={{ lineHeight: '10px' }}>
+                <Row nogutter align="end">
+                    <Col sm={3}>
+                        <Container style={styleTab}>
+                            <Row nogutter align="end">
+                                <Col sm={4}>
+                                    <img src={Icons.carSelected} alt="car" style={{ width: '45px' }} />
+                                </Col>
+                                <Col sm={8}>
+                                    <Container>
+                                        <Row nogutter>
+                                            <Col sm={12}>
+                                                <p>comprar</p>
+                                            </Col>
+                                        </Row>
+                                        <Row nogutter>
+                                            <Col sm={12}>
+                                                <p>carros</p>
+                                            </Col>
+                                        </Row>
+                                    </Container>
+                                </Col>
+                            </Row>
+                        </Container>
                     </Col>
                     <Col sm={3}>
+                        <Container style={styleTab}>
+                            <Row align="end">
+                                <Col sm={4}>
+                                    <img src={Icons.carSelected} alt="car" style={{ width: '45px' }} />
+                                </Col>
+                                <Col sm={8}>
+                                    <Container>
+                                        <Row>
+                                            <Col sm={12}>
+                                                <p>comprar</p>
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col sm={12}>
+                                                <p>motos</p>
+                                            </Col>
+                                        </Row>
+                                    </Container>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </Col>
+                    <Col sm={6} align="right">
                         <p>vender meu carro</p>
                     </Col>
                 </Row>
-                <Row>
+                <Row nogutter>
                     <Col>
                         <Container style={stylecontainerForm}>
                             <Row>
@@ -87,6 +129,10 @@ const stylecontainerForm = {
     background: 'white',
     border: '1px solid',
     borderColor: '#F4F4F4'
+}
+
+const styleTab = {
+    borderBottom: '1px solid red'
 }
 
 export default FilterForm;
