@@ -6,7 +6,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-grid-system": "^5.0.2",
-    "react-scripts": "3.1.1",
+    "react-scripts": "3.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
