@@ -1,9 +1,11 @@
-import carDefault from './carPlaceholder.png';
+import carDefault from './carDefault.png';
 import carSelected from './carSelected.png';
+import motoDefault from './motoDefault.png'
 
 const icons = {
     carDefault,
-    carSelected
+    carSelected,
+    motoDefault
 }
 
 export default icons;

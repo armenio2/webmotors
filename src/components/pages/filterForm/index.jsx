@@ -42,7 +42,7 @@ function FilterForm() {
                         <Container style={styleTab}>
                             <Row align="end">
                                 <Col sm={4}>
-                                    <img src={Icons.carDefault} alt="car" style={{ width: '45px' }} />
+                                    <img src={Icons.motoDefault} alt="car" style={{ width: '45px' }} />
                                 </Col>
                                 <Col sm={8}>
                                     <Container style={{ lineHeight: '1px' }}>
@@ -137,8 +137,8 @@ const styleTab = {
 }
 
 const styleTabActive = {
-    borderBottom: '1px solid red',
-    color: 'red'
+    borderBottom: '1px solid #D24A53',
+    color: '#E8A4B1'
 }
 
 export default FilterForm;
@@ -146,4 +146,4 @@ export default FilterForm;
 
             //https://www.webmotors.com.br/assets/img/webmotors.svg?t=7963 // icon
 
-// icon color #C4C4C4
+// red strong color #D24A53
