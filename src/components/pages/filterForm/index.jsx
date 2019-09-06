@@ -99,29 +99,41 @@ function FilterForm() {
                                     </select>
                                 </Col>
                                 <Col sm={3}>
-                                    <p>input modelos</p>
+                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white' }} name="cars">
+                                        <option value="volvo">Modelos</option>
+                                        <option value="volvo">Volvo</option>
+                                        <option value="saab">Saab</option>
+                                        <option value="fiat">Fiat</option>
+                                        <option value="audi">Audi</option>
+                                    </select>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col sm={3}>
-                                    <p>input ano desejado</p>
+                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white' }} name="cars">
+                                        <option value="volvo">Ano Desejado</option>
+                                    </select>
                                 </Col>
                                 <Col sm={3}>
-                                    <p>input faixa de preço</p>
+                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white' }} name="cars">
+                                        <option value="volvo">Faixa de Preço</option>
+                                    </select>
                                 </Col>
                                 <Col sm={6}>
-                                    <p>input versão</p>
+                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white' }} name="cars">
+                                        <option value="volvo">Versão: Todas</option>
+                                    </select>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col sm={2}>
-                                    <p>busca avançada</p>
+                                    <p>> Busca Avançada</p>
                                 </Col>
                                 <Col sm={2}>
-                                    <p>botão limpar filtros</p>
+                                    <p style={{ color: '#C4C4C4' }}>Limpar filtros</p>
                                 </Col>
                                 <Col sm={4}>
-                                    <p>bottão ver offertas</p>
+                                    <p>VER OFERTAS</p>
                                 </Col>
                             </Row>
                         </Container>
@@ -136,7 +148,8 @@ const stylesContainer = {
     width: '933px',
     height: '312px',
     background: '#F4F4F4',
-    padding: '5px'
+    padding: '5px',
+    fontFamily: "Poppins, Sans-serif"
 }
 
 const stylecontainerForm = {
