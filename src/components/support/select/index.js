@@ -1,18 +1,30 @@
 import React from 'react'
 
 const makeOptions = (data, placeholder) => {
-    console.log("data ", data)
-    return data.map((item) => <option value={item.ID}>{placeholder}: {item.Name}</option>);
+    if (data) {
+        return data.map((item) => <option key={item.ID} value={item.ID}>{placeholder}  {item.Name}</option>);
+    } else {
+        return <option value={'default'}>{placeholder}</option>;
+    }
 
 }
 
 
 const Select = (props) => {
+    const disabled = props.data ? false : true
     return (
-        <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white', height: '30px' }} name={props.placeholder}>
+        <select style={styles} name={props.placeholder} disabled={disabled}>
             {makeOptions(props.data, props.placeholder)}
         </select>
     );
+}
+
+const styles = {
+    width: '100%',
+    border: '1px solid #C4C4C4',
+    borderRadius: '3px',
+    background: 'white',
+    height: '30px'
 }
 
 export default Select;

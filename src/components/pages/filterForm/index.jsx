@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-grid-system';
-//import Checkbox from 'rc-checkbox';
 import Icons from '../../../assets//icons';
 import Select from '../../support/select';
 
-function FilterForm(props) {
+const FilterForm = (props) => {
+    const [modelData, setModelData] = useState(false);
+
     return (
         <Container style={stylesContainer}>
             <Container>
@@ -87,38 +88,24 @@ function FilterForm(props) {
                             </Row>
                             <Row style={{ padding: '10px' }}>
                                 <Col sm={6} >
-                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white', height: '30px' }} name="locate">
-                                        <option value="volvo">Onde: São Paulo</option>
-                                    </select>
+                                    <Select data={false} placeholder={'Onde:'} />
                                 </Col>
                                 <Col sm={3}>
-                                    <Select data={props.data} placeholder={'Marca'} />
+                                    <Select data={props.data} placeholder={'Marca:'} />
                                 </Col>
                                 <Col sm={3}>
-                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white', height: '30px' }} name="Modelos">
-                                        <option value="volvo">Modelos</option>
-                                        <option value="volvo">Volvo</option>
-                                        <option value="saab">Saab</option>
-                                        <option value="fiat">Fiat</option>
-                                        <option value="audi">Audi</option>
-                                    </select>
+                                    <Select data={modelData} placeholder={'Modelo:'} />
                                 </Col>
                             </Row>
                             <Row style={{ padding: '10px' }}>
                                 <Col sm={3}>
-                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white', height: '30px' }} name="Year">
-                                        <option value="volvo">Ano Desejado</option>
-                                    </select>
+                                    <Select data={false} placeholder={'Ano Desejado'} />
                                 </Col>
                                 <Col sm={3}>
-                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white', height: '30px' }} name="Price">
-                                        <option value="volvo">Faixa de Preço</option>
-                                    </select>
+                                    <Select data={false} placeholder={'Faixa de Preço'} />
                                 </Col>
                                 <Col sm={6}>
-                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white', height: '30px' }} name="Version">
-                                        <option value="volvo">Versão: Todas</option>
-                                    </select>
+                                    <Select data={false} placeholder={'Versão'} />
                                 </Col>
                             </Row>
                             <Row style={{ padding: '10px' }}>
