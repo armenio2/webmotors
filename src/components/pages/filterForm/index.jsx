@@ -19,10 +19,10 @@ const FilterForm = (props) => {
             <Container>
                 <Row nogutter align="end">
                     <Col sm={3}>
-                        <Container style={styleTabActive}>
+                        <Container onClick={() => changeTabValue('car')} style={tabValue === 'car' ? styleTabActive : styleTab}>
                             <Row align="end">
                                 <Col sm={4}>
-                                    <img src={Icons.carSelected} alt="car" style={{ width: '45px' }} />
+                                    <img src={tabValue === 'car' ? Icons.carSelected : Icons.carDefault} alt="car" style={{ width: '45px' }} />
                                 </Col>
                                 <Col sm={8}>
                                     <Container style={{ lineHeight: '1px' }}>
@@ -42,10 +42,10 @@ const FilterForm = (props) => {
                         </Container>
                     </Col>
                     <Col sm={3}>
-                        <Container style={styleTab}>
+                        <Container onClick={() => changeTabValue('bike')} style={tabValue === 'bike' ? styleTabActive : styleTab}>
                             <Row align="end">
                                 <Col sm={4}>
-                                    <img src={Icons.motoDefault} alt="car" style={{ width: '45px' }} />
+                                    <img src={tabValue === 'bike' ? Icons.motoSelected : Icons.motoDefault} alt="car" style={{ width: '45px' }} />
                                 </Col>
                                 <Col sm={8}>
                                     <Container style={{ lineHeight: '1px' }}>
@@ -64,8 +64,14 @@ const FilterForm = (props) => {
                             </Row>
                         </Container>
                     </Col>
-                    <Col sm={6} align="right">
-                        <p>VENDER MEU CARRO</p>
+                    <Col sm={6}>
+                        <Container style={{ lineHeight: '1px' }}>
+                            <Row align="right" style={{ float: 'right' }} >
+                                <Col style={yellowButton} sm={12} align="center" >
+                                    <p>Vender meu carro</p>
+                                </Col>
+                            </Row>
+                        </Container>
                     </Col>
                 </Row>
                 {<CarTab data={props.data} modelData={modelData} />}
@@ -84,30 +90,21 @@ const stylesContainer = {
 
 const styleTab = {
     borderBottom: '1px solid #C4C4C4',
-    color: '#C4C4C4'
+    color: '#C4C4C4',
+    cursor: 'pointer'
 }
 
 const styleTabActive = {
     borderBottom: '1px solid #D24A53',
-    color: '#E8A4B1'
+    color: '#E8A4B1',
+    cursor: 'pointer'
 }
 
-const styleCheckbox = {
-    borderColor: '#D24A53'
-}
-
-const styleSelect = {
-    color: 'red',
-    background: 'green',
-    borderColor: 'yellow'
+const yellowButton = {
+    color: '#F6A55E',
+    border: '1px solid #F6A55E',
+    fontWeight: '15px',
+    padding: '10px'
 }
 
 export default FilterForm;
-
-
-                    //https://www.webmotors.com.br/assets/img/webmotors.svg?t=7963 // icon
-
-        // red strong color #D24A53
-
-
-//https://www.npmjs.com/package/react-select

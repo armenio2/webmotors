@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'react-grid-system';
 import Select from '../../../support/select';
 
 const carTab = (props) => {
-    console.log('props ', props)
 
     return (
         <Row nogutter>
