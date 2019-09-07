@@ -2,9 +2,9 @@ import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 //import Checkbox from 'rc-checkbox';
 import Icons from '../../../assets//icons';
+import Select from '../../support/select';
 
-
-function FilterForm() {
+function FilterForm(props) {
     return (
         <Container style={stylesContainer}>
             <Container>
@@ -92,13 +92,7 @@ function FilterForm() {
                                     </select>
                                 </Col>
                                 <Col sm={3}>
-                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white', height: '30px' }} name="Marca">
-                                        <option value="volvo">Marca</option>
-                                        <option value="volvo">Volvo</option>
-                                        <option value="saab">Saab</option>
-                                        <option value="fiat">Fiat</option>
-                                        <option value="audi">Audi</option>
-                                    </select>
+                                    <Select data={props.data} placeholder={'Marca'} />
                                 </Col>
                                 <Col sm={3}>
                                     <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white', height: '30px' }} name="Modelos">
