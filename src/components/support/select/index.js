@@ -2,7 +2,11 @@ import React from 'react'
 
 const makeOptions = (data, placeholder) => {
     if (data) {
-        return data.map((item) => <option key={item.ID} value={item.ID}>{placeholder}  {item.Name}</option>);
+        let result = data.map((item) => <option key={item.ID} value={item.ID}>{placeholder}  {item.Name}</option>);
+        return result = [
+            <option value={'default'}>{placeholder} todos</option>,
+            ...result
+        ]
     } else {
         return <option value={'default'}>{placeholder}</option>;
     }
