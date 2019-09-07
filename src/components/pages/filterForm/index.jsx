@@ -7,18 +7,18 @@ import Icons from '../../../assets//icons';
 function FilterForm() {
     return (
         <Container style={stylesContainer}>
-            <Container style={{ lineHeight: '10px' }}>
+            <Container>
                 <Row>
                     <Col sm={12}>
                         <img src="https://www.webmotors.com.br/assets/img/webmotors.svg?t=7963" alt="webmotorLogo" />
                     </Col>
                 </Row>
             </Container>
-            <Container style={{ lineHeight: '10px' }}>
+            <Container>
                 <Row nogutter align="end">
                     <Col sm={3}>
                         <Container style={styleTabActive}>
-                            <Row nogutter align="end">
+                            <Row align="end">
                                 <Col sm={4}>
                                     <img src={Icons.carSelected} alt="car" style={{ width: '45px' }} />
                                 </Col>
@@ -85,12 +85,14 @@ function FilterForm() {
                                     <label for="scales">Usados</label>
                                 </Col>
                             </Row>
-                            <Row>
-                                <Col sm={6}>
-                                    <p>input local + raio</p>
+                            <Row style={{ padding: '10px' }}>
+                                <Col sm={6} >
+                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white', height: '30px' }} name="locate">
+                                        <option value="volvo">Onde: São Paulo</option>
+                                    </select>
                                 </Col>
                                 <Col sm={3}>
-                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white' }} name="cars">
+                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white', height: '30px' }} name="Marca">
                                         <option value="volvo">Marca</option>
                                         <option value="volvo">Volvo</option>
                                         <option value="saab">Saab</option>
@@ -99,7 +101,7 @@ function FilterForm() {
                                     </select>
                                 </Col>
                                 <Col sm={3}>
-                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white' }} name="cars">
+                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white', height: '30px' }} name="Modelos">
                                         <option value="volvo">Modelos</option>
                                         <option value="volvo">Volvo</option>
                                         <option value="saab">Saab</option>
@@ -108,32 +110,34 @@ function FilterForm() {
                                     </select>
                                 </Col>
                             </Row>
-                            <Row>
+                            <Row style={{ padding: '10px' }}>
                                 <Col sm={3}>
-                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white' }} name="cars">
+                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white', height: '30px' }} name="Year">
                                         <option value="volvo">Ano Desejado</option>
                                     </select>
                                 </Col>
                                 <Col sm={3}>
-                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white' }} name="cars">
+                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white', height: '30px' }} name="Price">
                                         <option value="volvo">Faixa de Preço</option>
                                     </select>
                                 </Col>
                                 <Col sm={6}>
-                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white' }} name="cars">
+                                    <select style={{ width: '100%', border: '1px solid #C4C4C4', borderRadius: '3px', background: 'white', height: '30px' }} name="Version">
                                         <option value="volvo">Versão: Todas</option>
                                     </select>
                                 </Col>
                             </Row>
-                            <Row>
-                                <Col sm={2}>
+                            <Row style={{ padding: '10px' }}>
+                                <Col sm={8}>
                                     <p>> Busca Avançada</p>
                                 </Col>
                                 <Col sm={2}>
                                     <p style={{ color: '#C4C4C4' }}>Limpar filtros</p>
                                 </Col>
-                                <Col sm={4}>
-                                    <p>VER OFERTAS</p>
+                                <Col sm={2}>
+                                    <button
+                                        style={{ background: '#D24A53', color: 'white', border: 'none', borderRadius: '5px', height: '50px', width: '100%' }}
+                                    >VER OFERTAS</button>
                                 </Col>
                             </Row>
                         </Container>
