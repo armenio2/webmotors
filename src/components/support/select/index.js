@@ -1,25 +1,38 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 
-const makeOptions = (data, placeholder) => {
-    if (data) {
-        let result = data.map((item) => <option key={item.ID} value={item.ID}>{placeholder}  {item.Name}</option>);
+
+const makeOptions = (props) => {
+    if (props.data) {
+        let result = props.data.map((item) => <option key={item.ID} value={item.ID}>{props.placeholder}  {item.Name}</option>);
         return result = [
-            <option value={'default'}>{placeholder} todos</option>,
+            <option key='default' value={'default'} >{props.placeholder} todos</option>,
             ...result
         ]
     } else {
-        return <option value={'default'}>{placeholder}</option>;
+        return <option key='default' value={'default'}>{props.placeholder}</option>;
     }
-
 }
 
-
 const Select = (props) => {
+    const dispatch = useDispatch();
     const disabled = props.data ? false : true
+
+    const handleChange = (event) => {
+        const type = props.type
+        const value = event.target.value
+        dispatch({ type: type, newSelectedId: value })
+    }
     return (
-        <select style={styles} name={props.placeholder} disabled={disabled}>
-            {makeOptions(props.data, props.placeholder)}
-        </select>
+        <select
+            style={styles}
+            name={props.placeholder}
+            disabled={disabled}
+            value={props.value}
+            onChange={handleChange}
+        >
+            {makeOptions(props)}
+        </select >
     );
 }
 

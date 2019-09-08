@@ -3,9 +3,23 @@ import { Container, Row, Col } from 'react-grid-system';
 import Icons from '../../../assets//icons';
 import CarTab from './tab/car';
 
-const FilterForm = (props) => {
-    const [modelData, setModelData] = useState(false);
+const View = (props) => {
+    const [form, changeForm] = useState(
+        {
+            mark: { data: props.markData },
+            model: { data: props.modelData },
+            checkBoxNew: false,
+            checkBoxUsed: false
+        }
+    );
     const [tabValue, changeTabValue] = useState('car');
+
+    useEffect(() => {
+        changeForm({
+            ...form,
+            model: { data: props.modelData }
+        })
+    }, [props.modelData])//update when modelData change
 
     return (
         <Container style={stylesContainer}>
@@ -26,10 +40,10 @@ const FilterForm = (props) => {
                                 </Col>
                                 <Col sm={8}>
                                     <Container style={{ lineHeight: '1px' }}>
-                                        <Row >
+                                        <Row>
                                             <Col sm={12}>
-                                                <p>COMPRAR</p>
-                                                <Row >
+                                                <p style={styleLabel}>COMPRAR</p>
+                                                <Row>
                                                     <Col sm={12}>
                                                         <p>CARROS</p>
                                                     </Col>
@@ -51,7 +65,7 @@ const FilterForm = (props) => {
                                     <Container style={{ lineHeight: '1px' }}>
                                         <Row >
                                             <Col sm={12}>
-                                                <p>COMPRAR</p>
+                                                <p style={styleLabel}>COMPRAR</p>
                                                 <Row >
                                                     <Col sm={12}>
                                                         <p>MOTOS</p>
@@ -66,7 +80,7 @@ const FilterForm = (props) => {
                     </Col>
                     <Col sm={6}>
                         <Container style={{ lineHeight: '1px' }}>
-                            <Row align="right" style={{ float: 'right' }} >
+                            <Row style={{ float: 'right' }} >
                                 <Col style={yellowButton} sm={12} align="center" >
                                     <p>Vender meu carro</p>
                                 </Col>
@@ -74,7 +88,7 @@ const FilterForm = (props) => {
                         </Container>
                     </Col>
                 </Row>
-                {<CarTab data={props.data} modelData={modelData} />}
+                {<CarTab form={form} changeForm={changeForm} />}
             </Container>
         </Container>
     );
@@ -100,11 +114,18 @@ const styleTabActive = {
     cursor: 'pointer'
 }
 
+const styleLabel = {
+    color: '#C4C4C4',
+    fontSize: 12
+}
+
 const yellowButton = {
     color: '#F6A55E',
     border: '1px solid #F6A55E',
-    fontWeight: '15px',
-    padding: '10px'
+    fontWeight: 'bold',
+    padding: '5px',
+    marginBottom: '10px',
+    cursor: 'pointer'
 }
 
-export default FilterForm;
+export default View;

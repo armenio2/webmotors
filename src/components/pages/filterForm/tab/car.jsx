@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 import Select from '../../../support/select';
 
 const carTab = (props) => {
-
     return (
         <Row nogutter>
             <Col>
@@ -11,17 +10,17 @@ const carTab = (props) => {
                     <Row>
                         <Col sm={2}>
                             <input type="checkbox" id="scales" name="Novos"
-                                checked
-                                style={{ borderColor: 'red', color: 'green' }}
+                                checked={props.form.checkBoxNew}
+                                onClick={() => props.changeForm({ ...props.form, checkBoxNew: !props.form.checkBoxNew })}
                             />
-                            <label for="scales">Novos</label>
+                            <label value="Novos">Novos</label>
                         </Col>
                         <Col sm={2}>
                             <input type="checkbox" id="scales" name="Usados"
-                                checked
-                                style={{ borderColor: 'red', color: 'green' }}
+                                checked={props.form.checkBoxUsed}
+                                onClick={() => props.changeForm({ ...props.form, checkBoxUsed: !props.form.checkBoxUsed })}
                             />
-                            <label for="scales">Usados</label>
+                            <label value="Usados">Usados</label>
                         </Col>
                     </Row>
                     <Row style={{ padding: '10px' }}>
@@ -29,10 +28,10 @@ const carTab = (props) => {
                             <Select data={false} placeholder={'Onde:'} />
                         </Col>
                         <Col sm={3}>
-                            <Select data={props.data} placeholder={'Marca:'} />
+                            <Select data={props.form.mark.data} type='mark' placeholder={'Marca:'} />
                         </Col>
                         <Col sm={3}>
-                            <Select data={props.modelData} placeholder={'Modelo:'} />
+                            <Select data={props.form.model.data} type='model' placeholder={'Modelo:'} />
                         </Col>
                     </Row>
                     <Row style={{ padding: '10px' }}>
@@ -51,11 +50,11 @@ const carTab = (props) => {
                             <p>> Busca Avançada</p>
                         </Col>
                         <Col sm={2}>
-                            <p style={{ color: '#C4C4C4' }}>Limpar filtros</p>
+                            <p style={{ color: '#C4C4C4', cursor: 'pointer' }}>Limpar filtros</p>
                         </Col>
                         <Col sm={2}>
                             <button
-                                style={{ background: '#D24A53', color: 'white', border: 'none', borderRadius: '5px', height: '50px', width: '100%' }}
+                                style={{ background: '#D24A53', color: 'white', border: 'none', borderRadius: '5px', height: '50px', width: '100%', cursor: 'pointer' }}
                             >VER OFERTAS</button>
                         </Col>
                     </Row>
