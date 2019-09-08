@@ -6,7 +6,7 @@ import Select from '../../../support/select';
 
 const carTab = (props) => {
     return (
-        <Row nogutter>
+        <Row>
             <Col>
                 <Container style={stylecontainerForm}>
                     <Row>
@@ -25,7 +25,7 @@ const carTab = (props) => {
                             <label value="Usados">Usados</label>
                         </Col>
                     </Row>
-                    <Row style={{ padding: '10px' }}>
+                    <Row style={styleRow}>
                         <Col sm={6} >
                             <Select data={false} placeholder={'Onde:'} />
                         </Col>
@@ -36,7 +36,7 @@ const carTab = (props) => {
                             <Select data={props.form.model.data} type='model' placeholder={'Modelo:'} />
                         </Col>
                     </Row>
-                    <Row style={{ padding: '10px' }}>
+                    <Row style={styleRow}>
                         <Col sm={3}>
                             <Select data={false} placeholder={'Ano Desejado'} />
                         </Col>
@@ -47,7 +47,7 @@ const carTab = (props) => {
                             <Select data={props.form.version.data} type='version' placeholder={'Versão'} />
                         </Col>
                     </Row>
-                    <Row style={{ padding: '5px' }}>
+                    <Row style={styleRow}>
                         <Col sm={8}>
                             <p>> Busca Avançada</p>
                         </Col>
@@ -72,6 +72,10 @@ const stylecontainerForm = {
     background: 'white',
     border: '1px solid',
     borderColor: '#F4F4F4'
+}
+
+const styleRow = {
+    padding: '10px 0px 10px 0px'
 }
 
 export default carTab;

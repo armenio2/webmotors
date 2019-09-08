@@ -39,7 +39,7 @@ const View = (props) => {
                 </Row>
             </Container>
             <Container>
-                <Row nogutter align="end">
+                <Row align="end">
                     <Col sm={3}>
                         <Container onClick={() => changeTabValue('car')} style={tabValue === 'car' ? styleTabActive : styleTab}>
                             <Row align="end">
@@ -124,7 +124,8 @@ const styleTabActive = {
 
 const styleLabel = {
     color: '#C4C4C4',
-    fontSize: 12
+    fontSize: 10,
+    fontWeight: 'bold'
 }
 
 const yellowButton = {
