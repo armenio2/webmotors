@@ -2,6 +2,8 @@ import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 import Select from '../../../support/select';
 
+
+
 const carTab = (props) => {
     return (
         <Row nogutter>
@@ -42,7 +44,7 @@ const carTab = (props) => {
                             <Select data={false} placeholder={'Faixa de Preço'} />
                         </Col>
                         <Col sm={6}>
-                            <Select data={false} placeholder={'Versão'} />
+                            <Select data={props.form.version.data} type='version' placeholder={'Versão'} />
                         </Col>
                     </Row>
                     <Row style={{ padding: '5px' }}>
@@ -54,13 +56,14 @@ const carTab = (props) => {
                         </Col>
                         <Col sm={2}>
                             <button
+                                onClick={() => alert(`Pesquisando MarcaId: ${props.storeState.markSelectedID}   ModelID: ${props.storeState.modelSelectedID}  VersionId: ${props.storeState.versionSelectedID} `)}
                                 style={{ background: '#D24A53', color: 'white', border: 'none', borderRadius: '5px', height: '50px', width: '100%', cursor: 'pointer' }}
                             >VER OFERTAS</button>
                         </Col>
                     </Row>
                 </Container>
             </Col>
-        </Row>
+        </Row >
     )
 };
 

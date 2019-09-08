@@ -8,6 +8,7 @@ const View = (props) => {
         {
             mark: { data: props.markData },
             model: { data: props.modelData },
+            version: { data: props.versionData },
             checkBoxNew: false,
             checkBoxUsed: false
         }
@@ -20,6 +21,13 @@ const View = (props) => {
             model: { data: props.modelData }
         })
     }, [props.modelData])//update when modelData change
+
+    useEffect(() => {
+        changeForm({
+            ...form,
+            version: { data: props.versionData }
+        })
+    }, [props.versionData])//update when versionData change
 
     return (
         <Container style={stylesContainer}>
@@ -88,7 +96,7 @@ const View = (props) => {
                         </Container>
                     </Col>
                 </Row>
-                {<CarTab form={form} changeForm={changeForm} />}
+                {<CarTab form={form} changeForm={changeForm} storeState={props.storeState} />}
             </Container>
         </Container>
     );
