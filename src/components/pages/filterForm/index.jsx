@@ -44,10 +44,10 @@ const View = (props) => {
                         <Container onClick={() => changeTabValue('car')} style={tabValue === 'car' ? styleTabActive : styleTab}>
                             <Row align="end">
                                 <Col sm={4}>
-                                    <img src={tabValue === 'car' ? Icons.carSelected : Icons.carDefault} alt="car" style={{ width: '45px' }} />
+                                    <img src={tabValue === 'car' ? Icons.carSelected : Icons.carDefault} alt="car" style={imgStyleIcon} />
                                 </Col>
                                 <Col sm={8}>
-                                    <Container style={{ lineHeight: '1px' }}>
+                                    <Container style={fixLineHeight}>
                                         <Row>
                                             <Col sm={12}>
                                                 <p style={styleLabel}>COMPRAR</p>
@@ -67,10 +67,10 @@ const View = (props) => {
                         <Container onClick={() => changeTabValue('bike')} style={tabValue === 'bike' ? styleTabActive : styleTab}>
                             <Row align="end">
                                 <Col sm={4}>
-                                    <img src={tabValue === 'bike' ? Icons.motoSelected : Icons.motoDefault} alt="car" style={{ width: '45px' }} />
+                                    <img src={tabValue === 'bike' ? Icons.motoSelected : Icons.motoDefault} alt="car" style={imgStyleIcon} />
                                 </Col>
                                 <Col sm={8}>
-                                    <Container style={{ lineHeight: '1px' }}>
+                                    <Container style={fixLineHeight}>
                                         <Row >
                                             <Col sm={12}>
                                                 <p style={styleLabel}>COMPRAR</p>
@@ -87,7 +87,7 @@ const View = (props) => {
                         </Container>
                     </Col>
                     <Col sm={6}>
-                        <Container style={{ lineHeight: '1px' }}>
+                        <Container style={fixLineHeight}>
                             <Row style={{ float: 'right' }} >
                                 <Col style={yellowButton} sm={12} align="center" >
                                     <p>Vender meu carro</p>
@@ -135,6 +135,14 @@ const yellowButton = {
     padding: '5px',
     marginBottom: '10px',
     cursor: 'pointer'
+}
+
+const fixLineHeight = {
+    lineHeight: '1px'
+}
+
+const imgStyleIcon = {
+    width: '45px'
 }
 
 export default View;

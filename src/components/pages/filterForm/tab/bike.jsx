@@ -4,7 +4,7 @@ import Select from '../../../support/select';
 
 const bikeTab = (props) => {
     return (
-        <Row nogutter>
+        <Row>
             <Col>
                 <Container style={stylecontainerForm}>
                     <Row>
@@ -23,18 +23,18 @@ const bikeTab = (props) => {
                             <label value="Usados">Usados</label>
                         </Col>
                     </Row>
-                    <Row style={{ padding: '10px' }}>
+                    <Row style={styleRow}>
                         <Col sm={6} >
                             <Select data={false} placeholder={'Onde:'} />
                         </Col>
                         <Col sm={3}>
-                            <Select data={props.form.mark.data} changeForm={props.changeForm} placeholder={'Marca:'} />
+                            <Select data={false} type='mark' placeholder={'Marca:'} />
                         </Col>
                         <Col sm={3}>
-                            <Select data={props.form.model.data} placeholder={'Modelo:'} />
+                            <Select data={false} type='model' placeholder={'Modelo:'} />
                         </Col>
                     </Row>
-                    <Row style={{ padding: '10px' }}>
+                    <Row style={styleRow}>
                         <Col sm={3}>
                             <Select data={false} placeholder={'Ano Desejado'} />
                         </Col>
@@ -42,25 +42,25 @@ const bikeTab = (props) => {
                             <Select data={false} placeholder={'Faixa de Preço'} />
                         </Col>
                         <Col sm={6}>
-                            <Select data={false} placeholder={'Versão'} />
+                            <Select data={false} type='version' placeholder={'Versão'} />
                         </Col>
                     </Row>
-                    <Row style={{ padding: '5px' }}>
+                    <Row style={styleRow}>
                         <Col sm={8}>
                             <p>> Busca Avançada</p>
                         </Col>
                         <Col sm={2}>
-                            <p style={{ color: '#C4C4C4' }}>Limpar filtros</p>
+                            <p style={buttonClean}>Limpar filtros</p>
                         </Col>
                         <Col sm={2}>
                             <button
-                                style={{ background: '#D24A53', color: 'white', border: 'none', borderRadius: '5px', height: '50px', width: '100%' }}
+                                style={buttonSubmit}
                             >VER OFERTAS</button>
                         </Col>
                     </Row>
                 </Container>
             </Col>
-        </Row>
+        </Row >
     )
 };
 
@@ -69,6 +69,25 @@ const stylecontainerForm = {
     background: 'white',
     border: '1px solid',
     borderColor: '#F4F4F4'
+}
+
+const styleRow = {
+    padding: '10px 0px 10px 0px'
+}
+
+const buttonClean = {
+    color: '#C4C4C4',
+    cursor: 'pointer'
+}
+
+const buttonSubmit = {
+    background: '#D24A53',
+    color: 'white',
+    border: 'none',
+    borderRadius: '5px',
+    height: '50px',
+    width: '100%',
+    cursor: 'pointer'
 }
 
 export default bikeTab;

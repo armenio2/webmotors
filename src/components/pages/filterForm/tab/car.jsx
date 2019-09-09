@@ -52,12 +52,12 @@ const carTab = (props) => {
                             <p>> Busca Avançada</p>
                         </Col>
                         <Col sm={2}>
-                            <p style={{ color: '#C4C4C4', cursor: 'pointer' }}>Limpar filtros</p>
+                            <p style={buttonClean}>Limpar filtros</p>
                         </Col>
                         <Col sm={2}>
                             <button
                                 onClick={() => alert(`Pesquisando MarcaId: ${props.storeState.markSelectedID}   ModelID: ${props.storeState.modelSelectedID}  VersionId: ${props.storeState.versionSelectedID} `)}
-                                style={{ background: '#D24A53', color: 'white', border: 'none', borderRadius: '5px', height: '50px', width: '100%', cursor: 'pointer' }}
+                                style={buttonSubmit}
                             >VER OFERTAS</button>
                         </Col>
                     </Row>
@@ -76,6 +76,21 @@ const stylecontainerForm = {
 
 const styleRow = {
     padding: '10px 0px 10px 0px'
+}
+
+const buttonClean = {
+    color: '#C4C4C4',
+    cursor: 'pointer'
+}
+
+const buttonSubmit = {
+    background: '#D24A53',
+    color: 'white',
+    border: 'none',
+    borderRadius: '5px',
+    height: '50px',
+    width: '100%',
+    cursor: 'pointer'
 }
 
 export default carTab;
