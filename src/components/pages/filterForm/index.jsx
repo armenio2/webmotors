@@ -39,7 +39,7 @@ const View = (props) => {
                 </Row>
             </Container>
             <Container>
-                <Row align="end">
+                <Row nogutter align="end">
                     <Col sm={3}>
                         <Container onClick={() => changeTabValue('car')} style={tabValue === 'car' ? styleTabActive : styleTab}>
                             <Row align="end">
