@@ -11,18 +11,18 @@ const carTab = (props) => {
                 <Container style={stylecontainerForm}>
                     <Row>
                         <Col sm={2}>
-                            <input type="checkbox" id="scales" name="Novos"
+                            <input type="checkbox" id="new" name="Novos"
                                 checked={props.form.checkBoxNew}
                                 onClick={() => props.changeForm({ ...props.form, checkBoxNew: !props.form.checkBoxNew })}
                             />
-                            <label value="Novos">Novos</label>
+                            <label value="Novos" for="new">Novos</label>
                         </Col>
                         <Col sm={2}>
-                            <input type="checkbox" id="scales" name="Usados"
+                            <input type="checkbox" id="used" name="Usados"
                                 checked={props.form.checkBoxUsed}
                                 onClick={() => props.changeForm({ ...props.form, checkBoxUsed: !props.form.checkBoxUsed })}
                             />
-                            <label value="Usados">Usados</label>
+                            <label value="Usados" for="used">Usados</label>
                         </Col>
                     </Row>
                     <Row style={styleRow}>
